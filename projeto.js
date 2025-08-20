@@ -266,7 +266,6 @@ console.warn('Botão de acesso admin não encontrado (id="adminAccessBtn").');
   }
 });
 
-// ===== Modal de login para Admin =====
 document.addEventListener('DOMContentLoaded', () => {
   const adminBtn = document.getElementById('adminAccessBtn');
   const modal = document.getElementById('loginModal');
@@ -292,29 +291,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-// Verifica login no modal admin
-if (submitBtn) {
-  submitBtn.addEventListener('click', () => {
-    const user = document.getElementById('adminUser').value.trim();
-    const pass = document.getElementById('adminPass').value.trim();
+  // ===== Verifica login no modal admin =====
+  if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      const user = document.getElementById('adminUser').value.trim();
+      const pass = document.getElementById('adminPass').value.trim();
 
-    // Lista de logins e senhas válidas
-    const credenciais = [
-      { usuario: 'maripera', senha: '1111' },
-      { usuario: 'lenamartins', senha: '2222' }
-    ];
+      // Lista de logins e senhas válidas
+      const credenciais = [
+        { usuario: 'maripera', senha: '1111' },
+        { usuario: 'lenamartins', senha: '2222' }
+      ];
 
-    // Verifica se existe um par usuário/senha válido
-    const valido = credenciais.some(c => c.usuario === user && c.senha === pass);
+      // Verifica se existe um par usuário/senha válido
+      const valido = credenciais.some(c => c.usuario === user && c.senha === pass);
 
-    if (valido) {
-      window.location.href = 'admin.html';
-    } else {
-      alert('Usuário ou senha incorretos!');
-    }
-  });
-
-
-
-
-
+      if (valido) {
+        window.location.href = 'admin.html';
+      } else {
+        alert('Usuário ou senha incorretos!');
+      }
+    });
+  }
+});
