@@ -1,4 +1,3 @@
-// ===== Dados dos locais acessíveis =====
 const locais = [
   {
     id: 1,
@@ -50,7 +49,6 @@ const locais = [
   }
 ];
 
-// ===== Referências para elementos do DOM =====
 const cardsList = document.getElementById('cards-list');
 const modalOverlay = document.getElementById('modal-overlay');
 const modalImg = document.getElementById('modal-img');
@@ -65,7 +63,6 @@ const modalClose = document.getElementById('modal-close');
 const filterOptions = document.querySelectorAll('.filter-option');
 const btnExplore = document.querySelector('.btn-primary');
 
-// ===== Função para criar estrelas a partir da avaliação =====
 function createStars(rating) {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
@@ -74,12 +71,11 @@ function createStars(rating) {
   for (let i = 0; i < fullStars; i++) {
     starsHTML += '★';
   }
-  if (halfStar) starsHTML += '½'; // meio estrela
+  if (halfStar) starsHTML += '½'; 
 
   return starsHTML;
 }
 
-// ===== Função para renderizar os cards dos locais =====
 function renderCards(locaisArray) {
   cardsList.innerHTML = ''; // limpa a lista antes de criar novos cards
 
@@ -296,17 +292,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Verifica login no modal admin
-  if (submitBtn) {
-    submitBtn.addEventListener('click', () => {
-      const user = document.getElementById('adminUser').value.trim();
-      const pass = document.getElementById('adminPass').value.trim();
+// Verifica login no modal admin
+if (submitBtn) {
+  submitBtn.addEventListener('click', () => {
+    const user = document.getElementById('adminUser').value.trim();
+    const pass = document.getElementById('adminPass').value.trim();
 
-      if (user === 'admin' && pass === 'admin123') { // credenciais configuráveis
-        window.location.href = 'admin.html';
-      } else {
-        alert('Usuário ou senha incorretos!');
-      }
-    });
-  }
-});
+    // Lista de logins e senhas válidas
+    const credenciais = [
+      { usuario: 'maripera', senha: '1111' },
+      { usuario: 'lenamartins', senha: '2222' }
+    ];
+
+    // Verifica se existe um par usuário/senha válido
+    const valido = credenciais.some(c => c.usuario === user && c.senha === pass);
+
+    if (valido) {
+      window.location.href = 'admin.html';
+    } else {
+      alert('Usuário ou senha incorretos!');
+    }
+  });
+}
+
+
