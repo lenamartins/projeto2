@@ -313,3 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+  document.addEventListener('DOMContentLoaded', () => {
+  renderCards(locais);
+});
