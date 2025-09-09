@@ -1,7 +1,4 @@
-/* Reset básico */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -11,16 +8,15 @@ body {
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px; /* só um padding lateral */
+  padding: 0 20px;
   display: flex;
-  flex-direction: column; /* organiza os elementos em coluna */
-  justify-content: center; /* centraliza verticalmente */
-  align-items: center; /* centraliza horizontalmente */
-  text-align: center; /* centraliza o texto dentro dos elementos */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 15px;
 }
 
-/* Header - Título */
 .tagline {
   display: inline-block;
   background-color: #e7f0ff;
@@ -44,7 +40,6 @@ p.subtitle {
   margin-bottom: 20px;
 }
 
-/* Botão azul grande */
 .btn-primary {
   background-color: #007bff;
   border: none;
@@ -58,9 +53,7 @@ p.subtitle {
   transition: background-color 0.3s ease;
   margin-bottom: 30px;
 }
-.btn-primary:hover {
-  background-color: #0056b3;
-}
+.btn-primary:hover { background-color: #0056b3; }
 
 .main-content {
   display: flex;
@@ -68,7 +61,6 @@ p.subtitle {
   margin-bottom: 80px;
 }
 
-/* Filtro lateral */
 .filter-panel {
   width: 280px;
   background: #fff;
@@ -94,29 +86,13 @@ p.subtitle {
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
   transition: background-color 0.25s ease;
 }
-.filter-option:hover {
-  background-color: #e7f0ff;
-}
-.filter-option svg {
-  margin-right: 12px;
-  flex-shrink: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.filter-option .description {
-  font-weight: 400;
-  font-size: 0.85rem;
-  color: #666;
-  margin-left: 30px;
-  margin-top: -4px;
-}
-
+.filter-option:hover { background-color: #e7f0ff; }
 .filter-option.active {
-  background-color: #2a8efa; /* cor de fundo quando ativo */
-  color: white;              /* cor do texto */
-  border: 1px solid #4b42cc; /* borda mais escura */
+  background-color: #2a8efa;
+  color: white;
+  border: 1px solid #4b42cc;
 }
 
-/* Cards dos locais */
 .cards-list {
   flex-grow: 1;
   display: grid;
@@ -155,9 +131,7 @@ p.subtitle {
   font-weight: 700;
   font-size: 1rem;
 }
-.tags {
-  margin-bottom: 12px;
-}
+.tags { margin-bottom: 12px; }
 .tag {
   display: inline-block;
   padding: 4px 10px;
@@ -170,20 +144,13 @@ p.subtitle {
   background: #d9e8ff;
   cursor: default;
 }
-.tag.primary {
-  background: #007bff;
-  color: white;
-}
+.tag.primary { background: #007bff; color: white; }
 .address, .phone {
   display: flex;
   align-items: center;
   font-size: 0.9rem;
   color: #444;
   margin-bottom: 6px;
-}
-.address svg, .phone svg {
-  margin-right: 8px;
-  flex-shrink: 0;
 }
 .card-description {
   font-size: 0.9rem;
@@ -211,43 +178,26 @@ p.subtitle {
   color: white;
   border-color: #007bff;
 }
-.btn-secondary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
-}
+.btn-secondary:hover { background-color: #0056b3; border-color: #0056b3; }
 .btn-gps {
   background-color: white;
   color: #007bff;
   display: flex;
   align-items: center;
   gap: 6px;
+  text-decoration: none;
 }
-.btn-gps:hover {
-  background-color: #e7f0ff;
-}
-.btn-gps svg {
-  width: 18px;
-  height: 18px;
-}
+.btn-gps:hover { background-color: #e7f0ff; }
 
-/* Modal fundo do modal de detalhes */
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed; inset: 0;
   background: rgba(0,0,0,0.45);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
-.modal-overlay.active {
-  display: flex;
-}
-
-/* Modal conteúdo de detalhes */
+.modal-overlay.active { display: flex; }
 .modal {
   background: white;
   width: 90%;
@@ -266,189 +216,56 @@ p.subtitle {
   border-radius: 12px;
   margin-bottom: 12px;
 }
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .modal-rating {
   font-weight: 700;
   color: #f5a623;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
-.modal-tags {
-  margin-bottom: 14px;
-}
+.modal-tags { margin-bottom: 14px; }
 .modal-tags .tag {
   font-size: 0.8rem;
   margin-right: 8px;
   padding: 6px 12px;
 }
-.modal-info {
-  margin-bottom: 18px;
-  color: #444;
-}
-.modal-info svg {
-  margin-right: 8px;
-  vertical-align: middle;
-}
-.modal-info p {
-  margin: 6px 0;
-}
-.modal-description {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 24px;
-}
-.modal-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-}
+.modal-info { margin-bottom: 18px; color: #444; }
+.modal-description { font-size: 0.95rem; color: #555; margin-bottom: 24px; }
+.modal-buttons { display: flex; justify-content: flex-end; gap: 12px; }
 .btn-link, .btn-close {
-  padding: 12px 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  border: none;
-  user-select: none;
+  padding: 12px 20px; font-weight: 600; font-size: 1rem; border-radius: 10px; cursor: pointer; border: none; user-select: none;
 }
-.btn-link {
-  background-color: #007bff;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-}
-.btn-link:hover {
-  background-color: #0056b3;
-}
-.btn-close {
-  background-color: #eee;
-  color: #333;
-}
-.btn-close:hover {
-  background-color: #ddd;
-}
-
-/* Ícones inline */
-svg {
-  fill: currentColor;
-}
-
-/* Botão limpar filtros */
-.btn-clear-filters {
-  background-color: #eee;
-  color: #333;
-  border: none;
-  padding: 10px 16px;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-  width: 100%;
-}
-.btn-clear-filters:hover {
-  background-color: #ddd;
-}
+.btn-link { background-color: #007bff; color: white; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.btn-link:hover { background-color: #0056b3; }
+.btn-close { background-color: #eee; color: #333; }
+.btn-close:hover { background-color: #ddd; }
 
 .site-footer {
   background-color: #f3f4f6;
   padding: 15px 20px;
   text-align: center;
   border-top: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
 }
-
-.site-footer p {
-  margin: 5px 0;
-  color: #555;
-  font-size: 14px;
-}
-
+.site-footer p { margin: 5px 0; color: #555; font-size: 14px; }
 .admin-button {
-  background-color: #6c63ff;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #6c63ff; color: white; padding: 8px 15px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;
 }
+.admin-button:hover { background-color: #4b42cc; }
 
-.admin-button:hover {
-  background-color: #4b42cc;
-}
-
-/* Modal de login - fundo escuro */
 .modal-login {
-  display: none;
-  position: fixed;
-  z-index: 10000;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  display: none; position: fixed; z-index: 10000; padding-top: 100px; inset: 0; overflow: auto; background-color: rgba(0, 0, 0, 0.5);
 }
-
-/* Modal de login - caixa branca central */
 .modal-login .modal-content {
-  background-color: #fff;
-  margin: auto;
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-family: Arial, sans-serif;
+  background-color: #fff; margin: auto; padding: 20px; border-radius: 12px; width: 300px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex; flex-direction: column; gap: 10px; font-family: Arial, sans-serif;
 }
-
-/* Botão fechar (X) do modal login */
-.modal-login .close-btn {
-  align-self: flex-end;
-  font-size: 20px;
-  cursor: pointer;
-  color: #666;
-}
-.modal-login .close-btn:hover {
-  color: #000;
-}
-
-/* Inputs do modal login */
+.modal-login .close-btn { align-self: flex-end; font-size: 20px; cursor: pointer; color: #666; }
+.modal-login .close-btn:hover { color: #000; }
 .modal-login .modal-content input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
+  padding: 8px; border: 1px solid #ccc; border-radius: 8px; outline: none;
 }
-.modal-login .modal-content input:focus {
-  border-color: #7d7df5;
-  box-shadow: 0 0 5px #7d7df5;
-}
-
-/* Botão Entrar do modal login */
+.modal-login .modal-content input:focus { border-color: #7d7df5; box-shadow: 0 0 5px #7d7df5; }
 #loginSubmit {
-  background-color: #7d7df5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px;
-  cursor: pointer;
-  font-size: 16px;
+  background-color: #7d7df5; color: white; border: none; border-radius: 8px; padding: 8px; cursor: pointer; font-size: 16px;
 }
-#loginSubmit:hover {
-  background-color: #5b5be0;
-}
-
+#loginSubmit:hover { background-color: #5b5be0; }
