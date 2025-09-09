@@ -9,24 +9,31 @@
 <body>
   <div class="form-container">
     <h1>Cadastrar Novo Local Acessível</h1>
-    <form>
+    <form id="adminForm">
       <label for="nome">Nome do local:</label>
       <input type="text" id="nome" name="nome" required /> 
 
       <label for="endereco">Endereço:</label>
       <input type="text" id="endereco" name="endereco" required />
 
-      <label for="tipo">Tipo de acessibilidade:</label>
-      <input type="text" id="tipo" name="tipo" required />
+      <label for="tipo">Tipo de acessibilidade (fisica, visual, auditiva):</label>
+      <input type="text" id="tipo" name="tipo"  required />
 
       <label for="descricao">Descrição:</label>
       <textarea id="descricao" name="descricao" required></textarea>
 
-      <label for="imagem">Imagem (opcional):</label>
+      <label for="imagem">Imagem:</label>
       <input type="file" id="imagem" name="imagem" accept="image/*" />
 
       <button type="submit">Cadastrar</button>
     </form>
   </div>
+
+  <script>
+    document.getElementById('adminForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Cadastro enviado (exemplo). Integração com armazenamento não implementada.');
+    });
+  </script>
 </body>
-</html> 
+</html>
