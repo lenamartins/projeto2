@@ -13,7 +13,7 @@
   <span class="tagline">💙 Promovendo Inclusão em Blumenau</span>
   <h1>AcessaBlu</h1>
   <p class="subtitle">Encontre locais acessíveis em Blumenau para pessoas com deficiência. Uma plataforma colaborativa que promove inclusão e igualdade de acesso.</p>
-  <button class="btn-primary">Explorar Locais Acessíveis</button>
+  <button class="btn-primary" id="btnExplorar">Explorar Locais Acessíveis</button>
 
   <div class="main-content">
     <aside class="filter-panel">
@@ -31,12 +31,10 @@
     </aside>
 
     <section class="cards-list" id="cards-list">
-      <!-- Cartões de locais gerados por JS -->
     </section>
   </div>
 </div>
 
-<!-- Modal de detalhes -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <img id="modal-img" src="" alt="Imagem do local" />
@@ -53,7 +51,6 @@
   </div>
 </div>
 
-<!-- Modal de Login -->
 <div id="loginModal" class="modal modal-login">
   <div class="modal-content">
     <span class="close-btn" id="loginClose">&times;</span>
