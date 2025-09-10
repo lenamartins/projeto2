@@ -10,15 +10,24 @@
 
 <br>
 <div class="container">
-<section class="faixa">
-  <h1>AcessaBlu</h1>
-  <p>
-    Encontre locais acessíveis em Blumenau para pessoas com deficiência. 
-    Uma plataforma colaborativa que promove inclusão e igualdade de acesso.
-  </p>
-</section>
+  <section class="faixa">
+    <h1>AcessaBlu</h1>
+    <p>
+      Encontre locais acessíveis em Blumenau para pessoas com deficiência. 
+      Uma plataforma colaborativa que promove inclusão e igualdade de acesso.
+    </p>
+  </section>
+
+  <!-- filtros horizontais embaixo do cabeçalho -->
+  <div class="filter-bar">
+    <div class="filter-option" data-type="fisica">Acessibilidade Física</div>
+    <div class="filter-option" data-type="visual">Acessibilidade Visual</div>
+    <div class="filter-option" data-type="auditiva">Acessibilidade Auditiva</div>
+    <button class="btn-clear-filters">Limpar</button>
+  </div>
 
   <div class="main-content">
+    <!-- aside original mantido, mas o conteúdo não vai interferir -->
     <aside class="filter-panel">
       <h3>Filtrar por Acessibilidade</h3>
       <div class="filter-option" data-type="visual">
@@ -37,7 +46,6 @@
     </section>
   </div>
 </div>
-
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <img id="modal-img" src="" alt="Imagem do local" />
@@ -80,6 +88,7 @@
 <script src="projeto.js"></script>
 </body>
 </html>
+
 
 
 
