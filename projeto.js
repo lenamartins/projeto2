@@ -233,15 +233,17 @@ document.addEventListener("DOMContentLoaded", () => {
   loginSubmit.addEventListener("click", () => {
     const user = adminUser.value.trim();
     const pass = adminPass.value.trim();
-    if (user === "mari" && pass === "1111") {
-      loginModal.style.display = "none";
-      loginError.style.display = "none";
-      adminUser.value = "";
-      adminPass.value = "";
-      window.location.href = "admin.html";
-    } else {
-      loginError.style.display = "block";
-    }
+    if ((user === "mari" && pass === "1111") ||
+    (user === "lena" && pass === "2222")) {
+  loginModal.style.display = "none";
+  loginError.style.display = "none";
+  adminUser.value = "";
+  adminPass.value = "";
+  window.location.href = "admin.html";
+} else {
+  loginError.style.display = "block";
+}
+
   });
 
   window.addEventListener("click", (e) => {
