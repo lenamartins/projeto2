@@ -271,10 +271,10 @@ p.subtitle {
 #loginSubmit:hover { background-color: #5b5be0; }
 
 .faixa {
-  background: linear-gradient(to right, #4facfe, #00f2fe); /* gradiente azul */
-  padding: 40px 20px; /* espaço interno */
-  text-align: center; /* centraliza o conteúdo */
-  border-radius: 12px; /* cantos arredondados (opcional) */
-  color: white; /* deixa o texto branco para contraste */
-}
+  background: linear-gradient(to right, #6495ED, #87CEFA); 
+  padding: 40px 20px; 
+  text-align: center; 
+  border-radius: 12px; 
+  color: white;
+
 
