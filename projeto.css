@@ -56,21 +56,21 @@ p.subtitle {
 .btn-primary:hover { background-color: #0056b3; }
 
 .main-content {
-  display: flex;
-  gap: 24px;
+  display: block;
   margin-bottom: 80px;
 }
 
 .filter-panel {
-  width: 280px;
+  width: 100%;
+  margin: 20px auto;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgb(0 0 0 / 0.05);
   padding: 20px;
   font-weight: 600;
   color: #222;
-  align-self: flex-start;
 }
+
 .filter-panel h3 {
   margin-top: 0;
   margin-bottom: 20px;
@@ -276,5 +276,47 @@ p.subtitle {
   text-align: center; 
   border-radius: 12px; 
   color: white;
+
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px auto;
+  flex-wrap: wrap;
+}
+
+.filter-bar .filter-option,
+.filter-bar .btn-clear-filters {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.filter-bar .filter-option:hover,
+.filter-bar .btn-clear-filters:hover {
+  background: #f0f4ff; /* efeito mais claro ao passar o mouse */
+}
+
+.filter-bar .filter-option.active {
+  background: #2a8efa;
+  color: #fff;
+  border: 1px solid #1d6ed1;
+}
+
+.filter-bar .btn-clear-filters {
+  background: #eee;
+  color: #444;
+}
+
+.filter-bar .btn-clear-filters:hover {
+  background: #ddd;
+}
 
 
