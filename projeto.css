@@ -46,26 +46,9 @@ p.subtitle {
   margin-bottom: 20px;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  border: none;
-  color: white;
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgb(0 123 255 / 0.3);
-  transition: background-color 0.3s ease;
-  margin-bottom: 30px;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
 .separador {
   border: none;            /* tira o padrão feio */
-  border-top: 1px solid #ccc;  /* faz uma linha cinza clara */
+  border-top: 1px solid #888888;  /* faz uma linha cinza clara */
   margin: 20px auto;       /* espaço em cima e embaixo */
   width: 85%;              /* deixa menor que a tela toda */
 }
@@ -438,6 +421,7 @@ p.subtitle {
   border-radius: 12px;
   color: white;
 }
+
 
 
 
