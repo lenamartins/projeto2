@@ -67,7 +67,7 @@ p.subtitle {
 .section-divider {
   border: none;
   height: 1px;
-  background: #ddd;
+  background: #CCxxx;
   margin: 40px auto;
   width: 90%;
 }
@@ -439,5 +439,6 @@ p.subtitle {
   border-radius: 12px;
   color: white;
 }
+
 
 
