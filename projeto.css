@@ -63,6 +63,13 @@ p.subtitle {
 .btn-primary:hover {
   background-color: #0056b3;
 }
+.separador {
+  border: none;            /* tira o padrão feio */
+  border-top: 1px solid #ccc;  /* faz uma linha cinza clara */
+  margin: 20px auto;       /* espaço em cima e embaixo */
+  width: 85%;              /* deixa menor que a tela toda */
+}
+
 
 .main-content {
   display: flex;
@@ -431,6 +438,7 @@ p.subtitle {
   border-radius: 12px;
   color: white;
 }
+
 
 
 
