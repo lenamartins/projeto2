@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   endereco: "Rua Alberto Stein, 265 - Velha, Blumenau - SC",
   telefone: "(47) 3381-6100",
   descricao: "O Museu da Família Colonial oferece livro tátil para visitantes com deficiência visual e possui bom acesso geral, garantindo inclusão e acessibilidade.",
-  gps: "https://www.google.com/maps/search/?api=1&query=-26.917250,-49.063500",
+  gps: "https://maps.app.goo.gl/D7S1nA2uYAidhtQA7",
   img: "https://www.turismoblumenau.com.br/wp-content/uploads/2021/10/Museu-da-Familia-Colonial-arquivo-pref.-1024x687.png",
   tags: ["visual", "fisica"],
   rating: 4.6
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 {
   nome: "Catedral São Paulo Apóstolo",
-  endereco: "Praça Víctor Konder, Centro, Blumenau - SC",
+  endereco: "R. XV de Novembro, 955 - Centro, Blumenau",
   telefone: "(47) 3322-0699",
   descricao: "A Catedral São Paulo Apóstolo é acessível por ter rampas de entrada, espaços amplos para circulação e calçadas adaptadas para cadeirantes.",
   gps: "https://www.google.com/maps/place/Catedral+S%C3%A3o+Paulo+Ap%C3%B3stolo/@-26.9196398,-49.0687201,17z/data=!3m1!4b1!4m6!3m5!1s0x94df18c50f08d7d9:0xe701bb177980fc9c!8m2!3d-26.9196446!4d-49.0661452!16s%2Fg%2F11ts3pzh24?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D",
@@ -69,14 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
   endereco: "Prefeitura de Blumenau - Praça Victor Konder, 2, Centro, Blumenau - SC",
   telefone: "(47) 3381-6981",
   descricao: "Conta com placas acessíveis em pontos-chave, incluindo braille, pictogramas CAA, QR Codes com audiodescrição, alto-relevo e contraste visual.",
-  gps: "https://share.google/pWi5Oj9P5Y6QBzc36",
+  gps: "https://maps.app.goo.gl/YAewynqJuMzgkgSY9",
   img: "https://www.turismoblumenau.com.br/wp-content/uploads/2021/10/Prefeitura-de-Blumenau-Credito_Clio-Luconi-1024x683.png",
   tags: ["visual", "auditiva", "comunicacao"],
   rating: 4.4
 },
 {
   nome: "Teatro Carlos Gomes",
-  endereco: "https://maps.app.goo.gl/SXcHBMSzV8w5uHby5",
+  endereco: "R. XV de Novembro, 1181 - Centro, Blumenau",
   telefone: "(47) 3144-7166",
   descricao: "O Teatro Carlos Gomes passou por revitalização, ganhando rampas elevatórias, espaços e poltronas especiais, banheiros adaptados, assentos e circulação mais amplos, além de melhorias no forro, climatização e acústica, tudo preservando sua estética original.",
   gps: "https://maps.app.goo.gl/SXcHBMSzV8w5uHby5",
@@ -86,10 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
 },
 {
   nome: "Estação Unifique",
-  endereco: "https://www.google.com/maps/place/ESTAÇÃO+UNIFIQUE",
+  endereco: "Landell de Moura - R. Padre Roberto Landel de Moura, 19 - Centro, Blumenau",
   telefone: "(47) 3304-1071",
   descricao: "A Estação Unifique oferece um ambiente acessível, com áreas amplas e niveladas que facilitam o deslocamento de cadeirantes e pessoas com mobilidade reduzida.",
-  gps: "https://www.google.com/maps/place/ESTAÇÃO+UNIFIQUE",
+  gps: "https://maps.app.goo.gl/rwWCsJGG8Z6j5uS6A",
   img: "https://i.ytimg.com/vi/5usnzA11PYE/maxresdefault.jpg",
   tags: ["cadeirante", "mobilidade"],
   rating: 4.5
@@ -258,3 +258,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCards(locais);
 });
+
