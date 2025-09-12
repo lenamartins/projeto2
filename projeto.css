@@ -413,22 +413,18 @@ p.subtitle {
 #loginSubmit:hover {
   background-color: #5b5be0;
 }
-.faixa-azul.full-bleed {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  box-sizing: border-box;
-  background: #007BFF;
-  color: #fff;
-  padding: 18px 0;
+.faixa-azul {
+  background-color: #007BFF; /* azul */
+  color: #fff;              /* texto branco */
+  padding: 15px 40px;       /* altura/largura da caixa */
+  font-size: 22px;          /* tamanho da fonte */
+  font-weight: bold;
   text-align: center;
-  font-weight: 700;
-  font-size: 20px;
-  z-index: 1;
+  border-radius: 8px;       /* cantos arredondados */
+  display: inline-block;    /* caixa se ajusta ao conteúdo */
+  margin: 20px auto;        /* centraliza no container */
 }
+
 
 
 
