@@ -414,13 +414,16 @@ p.subtitle {
   background-color: #5b5be0;
 }
 
-.faixa {
-  background: linear-gradient(to right, #6495ED, #87CEFA);
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 12px;
-  color: white;
+.faixa-azul {
+  background-color: #007BFF; 
+  color: white;           
+  padding: 10px 20px;        
+  font-size: 20px;           
+  font-weight: bold;       
+  text-align: center;       
+  border-radius: 5px;       
 }
+
 
 
 
