@@ -46,11 +46,11 @@ p.subtitle {
   margin-bottom: 20px;
 }
 
-.separador {
-  border: none;            /* tira o padrão feio */
-  border-top: 1px solid #888888;  /* faz uma linha cinza clara */
-  margin: 20px auto;       /* espaço em cima e embaixo */
-  width: 85%;              /* deixa menor que a tela toda */
+.separador-visual {
+  border: none;
+  border-top: 1px solid #888888;
+  margin: 20px auto;
+  width: 85%;
 }
 
 
@@ -413,6 +413,7 @@ p.subtitle {
 #loginSubmit:hover {
   background-color: #5b5be0;
 }
+
 
 
 
