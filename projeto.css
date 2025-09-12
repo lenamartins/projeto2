@@ -413,17 +413,7 @@ p.subtitle {
 #loginSubmit:hover {
   background-color: #5b5be0;
 }
-.faixa-azul {
-  background-color: #007BFF; /* azul */
-  color: #fff;              /* texto branco */
-  padding: 15px 40px;       /* altura/largura da caixa */
-  font-size: 22px;          /* tamanho da fonte */
-  font-weight: bold;
-  text-align: center;
-  border-radius: 8px;       /* cantos arredondados */
-  display: inline-block;    /* caixa se ajusta ao conteúdo */
-  margin: 20px auto;        /* centraliza no container */
-}
+
 
 
 
