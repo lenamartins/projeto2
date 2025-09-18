@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     descricao: "A Estação Unifique oferece um ambiente acessível, com áreas amplas e niveladas que facilitam o deslocamento de cadeirantes e pessoas com mobilidade reduzida.",
     gps: "https://maps.app.goo.gl/rwWCsJGG8Z6j5uS6A",
     img: "https://i.ytimg.com/vi/5usnzA11PYE/maxresdefault.jpg",
-    tags: ["cadeirante", "mobilidade"],
+    tags: ["fisica"],
     rating: 4.5
   },
   {
@@ -285,6 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCards(locais);
 });
+
 
 
 
