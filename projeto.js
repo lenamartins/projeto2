@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   img: "https://i.ytimg.com/vi/5usnzA11PYE/maxresdefault.jpg",
   tags: ["cadeirante", "mobilidade"],
   rating: 4.5
-}
+},
   {
   nome: "Estação Unifique",
   endereco: "Landell de Moura - R. Padre Roberto Landel de Moura, 19 - Centro, Blumenau",
@@ -289,6 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCards(locais);
 });
+
 
 
 
