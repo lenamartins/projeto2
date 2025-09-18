@@ -254,6 +254,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") modalOverlay.classList.remove("active");
   });
 
+ var disqus_config = function () {
+  this.page.url = window.location.href;
+  this.page.identifier = window.location.pathname;
+};
+
+(function() { 
+  var d = document, s = d.createElement('script');
+  s.src = 'https://acessablu.disqus.com/embed.js'; // Seu shortname
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+
+ 
   adminAccessBtn.addEventListener("click", () => { loginModal.style.display = "block"; });
   loginClose.addEventListener("click", () => { loginModal.style.display = "none"; });
 
@@ -285,6 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCards(locais);
 });
+
 
 
 
