@@ -354,6 +354,22 @@ p.subtitle {
   background-color: #4b42cc;
 }
 
+.comentarios-card {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff; /* mesmo fundo dos cards */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.comentarios-card h3 {
+  text-align: center;
+  color: #0a3d62; /* azul escuro */
+  margin-bottom: 20px;
+}
+
 .modal-login {
   display: none;
   position: fixed;
@@ -413,6 +429,7 @@ p.subtitle {
 #loginSubmit:hover {
   background-color: #5b5be0;
 }
+
 
 
 
