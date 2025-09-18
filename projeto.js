@@ -94,6 +94,36 @@ document.addEventListener("DOMContentLoaded", () => {
   tags: ["cadeirante", "mobilidade"],
   rating: 4.5
 }
+   {
+  nome: "Museu de Ecologia Fritz Müller",
+  endereco: "Rua Itajaí, 2.195 - Vorstadt, Blumenau",
+  telefone: "(47) 3222-3189",
+  descricao: "Museu de ciências naturais com acervo de taxidermia, biblioteca, etc. Possui rampas, banheiros adaptados e acervos em brailes ",
+  gps: "https://maps.google.com/?q=Museu+de+Ecologia+Fritz+Müller+Blumenau",
+  img: "https://static.ndmais.com.br/2025/06/nd-1.jpg"
+  tags: ["fisica", “visual”],
+  rating: 5.0
+},
+{
+  nome: "Museu Hering",
+  endereco: "Rua Hermann Hering, 1.740 - Bom Retiro, Blumenau",
+  telefone: "(47) 3321-3340",
+  descricao: "Museu com história da moda e indústria têxtil. Acessibilidade física: rampas, elevador, banheiro semi adaptado. Acessibilidade visual: piso tátil, braile, réplicas táteis; também linguagem de Libras em alguns audiovisuais.",
+  gps: "https://maps.google.com/?q=Museu+Hering+Blumenau",
+  img: “https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/05/b7/2e/nossa-casinha-enxaimel.jpg?w=800&h=400&s=1”,
+  tags: ["fisica", "visual", "auditiva"],
+  rating: 4.6
+},
+{
+  nome: "Museu de Arte de Blumenau",
+  endereco: "Rua XV de Novembro, 161 - Centro, Blumenau",
+  telefone: "(47) 3381-6176",
+  descricao: "O MAB é um dos principais espaços culturais do município, dedicado às artes visuais. Ele se destaca por promover visitas sensoriais específicas para pessoas com deficiência visual, oferecendo a oportunidade de explorar obras por meio do toque e interação, em diálogo com médiadores culturais. Também realiza visitas mediadas, permitindo adaptações no ritmo e explicações mais acessíveis. Em algumas exposições, há peças interativas ou sensoriais, que favorecem diferentes formas de percepção.",
+  gps: "https://maps.google.com/?q=Museu+de+Arte+de+Blumenau",
+  img: "https://ocp.news/wp-content/uploads/2022/06/funda%C3%A7%C3%A3o-cultural-de-blumenau.jpg",
+  tags: ["fisica"], 
+  rating: 4.6
+}
   ];
 
   const cardsList      = document.getElementById("cards-list");
@@ -258,4 +288,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCards(locais);
 });
+
 
