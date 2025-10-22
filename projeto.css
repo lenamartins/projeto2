@@ -362,11 +362,6 @@ body, html {
   align-items: center;   
 }
 
-#comentarios h2 {
-  color: #1a73e8;       
-  margin-bottom: 20px;
-  font-family: Arial, sans-serif;
-}
 
 .modal-login {
   display: none;
@@ -427,6 +422,7 @@ body, html {
 #loginSubmit:hover {
   background-color: #5b5be0;
 }
+
 
 
 
