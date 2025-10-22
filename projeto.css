@@ -368,15 +368,6 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-
-@media (max-width: 600px) {
-  #comentarios {
-    padding: 15px;
-    margin: 30px 10px;
-  }
-}
-
-
 .modal-login {
   display: none;
   position: fixed;
@@ -436,6 +427,7 @@ body, html {
 #loginSubmit:hover {
   background-color: #5b5be0;
 }
+
 
 
 
