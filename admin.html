@@ -5,19 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro de Local Acessível</title>
   <link rel="stylesheet" href="admin.css" />
+  <style>
+    /* ajustes rápidos visuais para que o login fique junto */
+    .topbar { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+    .topbar form { display:flex; gap:8px; align-items:center; }
+    .hidden { display:none !important; }
+    .message { margin-top:8px; color:green; }
+    .error { margin-top:8px; color:red; }
+  </style>
 </head>
 <body>
+  <!-- LOGIN/LOGOUT -->
+  <div class="topbar">
+    <div id="auth">
+      <form id="loginForm">
+        <input name="email" placeholder="email admin" required />
+        <input name="password" placeholder="senha" type="password" required />
+        <button id="btnLogin" type="submit">Entrar</button>
+      </form>
+      <button id="btnLogout" class="hidden">Sair</button>
+    </div>
+    <div id="userInfo" class="hidden">Logado como <span id="userEmail"></span></div>
+  </div>
+
+  <!-- Container do formulário (seu HTML original adaptado) -->
   <div class="form-container">
     <h1>Cadastrar Novo Local Acessível</h1>
-    <form id="adminForm">
+    <!-- adminForm será mostrado apenas para admins -->
+    <form id="adminForm" class="hidden">
       <label for="nome">Nome do local:</label>
-      <input type="text" id="nome" name="nome" required /> 
+      <input type="text" id="nome" name="nome" required />
 
       <label for="endereco">Endereço:</label>
       <input type="text" id="endereco" name="endereco" required />
 
       <label for="tipo">Tipo de acessibilidade (fisica, visual, auditiva):</label>
-      <input type="text" id="tipo" name="tipo"  required />
+      <input type="text" id="tipo" name="tipo" required />
 
       <label for="descricao">Descrição:</label>
       <textarea id="descricao" name="descricao" required></textarea>
@@ -27,13 +50,192 @@
 
       <button type="submit">Cadastrar</button>
     </form>
+
+    <!-- mensagens -->
+    <div id="msg" class="message hidden"></div>
+    <div id="err" class="error hidden"></div>
   </div>
 
-  <script>
-    document.getElementById('adminForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Cadastro enviado (exemplo). Integração com armazenamento não implementada.');
-    });
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+    
+    const SUPABASE_URL = 'https://segqhcniszltjzrtbmhx.supabase.co'
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlZ3FoY25pc3psdGp6cnRibWh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE2OTg2MDYsImV4cCI6MjA3NzI3NDYwNn0.zkk-fn9KHgVcaDejjZCZAU-ZL95aEfdL2DTLIcMgZnM'
+    const IMAGE_BUCKET = 'acessablu-images' // nome do bucket que você criou
+  
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+
+    // helpers de UI
+    const loginForm = document.getElementById('loginForm')
+    const btnLogout = document.getElementById('btnLogout')
+    const adminForm = document.getElementById('adminForm')
+    const msgEl = document.getElementById('msg')
+    const errEl = document.getElementById('err')
+    const userInfo = document.getElementById('userInfo')
+    const userEmail = document.getElementById('userEmail')
+
+    function showMsg(text) {
+      msgEl.textContent = text; msgEl.classList.remove('hidden')
+      setTimeout(()=> msgEl.classList.add('hidden'), 4000)
+    }
+    function showErr(text) {
+      errEl.textContent = text; errEl.classList.remove('hidden')
+      setTimeout(()=> errEl.classList.add('hidden'), 6000)
+    }
+
+    async function signIn(email, password) {
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
+      if (error) throw error
+      // no supabase v2, depois do signInWithPassword o usuário fica logado automaticamente
+      return true
+    }
+    async function signOut() {
+      await supabase.auth.signOut()
+      location.reload()
+    }
+
+    // Verifica se o usuário atual está na tabela admins
+    async function isAdmin() {
+      const userResp = await supabase.auth.getUser()
+      const user = userResp.data?.user
+      if (!user) return false
+      const { data, error } = await supabase
+        .from('admins')
+        .select('user_id')
+        .eq('user_id', user.id)
+        .limit(1)
+      if (error) { console.error(error); return false }
+      return data && data.length > 0
+    }
+
+    // Faz upload da imagem para o bucket e retorna URL pública
+    async function uploadImage(file) {
+      if (!file) return null
+      const fileExt = file.name.split('.').pop()
+      const fileName = `${Date.now()}_${Math.random().toString(36).slice(2)}.${fileExt}`
+      const filePath = fileName
+
+      const { error: uploadError } = await supabase.storage
+        .from(IMAGE_BUCKET)
+        .upload(filePath, file, { cacheControl: '3600', upsert: false })
+
+      if (uploadError) {
+        throw uploadError
+      }
+
+      // obter URL pública
+      const { data } = supabase.storage.from(IMAGE_BUCKET).getPublicUrl(filePath)
+      return data?.publicUrl || null
+    }
+
+    // Cria o registro no banco (tabela places)
+    async function createPlace(payload) {
+      const { data, error } = await supabase
+        .from('places')
+        .insert([payload])
+        .select()
+        .single()
+
+      if (error) throw error
+      return data
+    }
+
+    // Inicialização: checar se tem user logado e se é admin; controlar UI
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const userResp = await supabase.auth.getUser()
+        const user = userResp.data?.user
+
+        if (user) {
+          loginForm.classList.add('hidden')
+          btnLogout.classList.remove('hidden')
+          userInfo.classList.remove('hidden')
+          userEmail.textContent = user.email || ''
+          // checar admin
+          if (await isAdmin()) {
+            adminForm.classList.remove('hidden')
+          } else {
+            adminForm.classList.add('hidden')
+            showErr('Você está logada, mas não é admin. A área de cadastro ficou oculta.')
+          }
+        } else {
+          // sem login: mostrar login e ocultar form
+          loginForm.classList.remove('hidden')
+          btnLogout.classList.add('hidden')
+          adminForm.classList.add('hidden')
+        }
+      } catch (err) {
+        console.error(err)
+        showErr('Erro ao checar autenticação.')
+      }
+    })
+
+    // login form submit
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const email = e.target.email.value
+      const password = e.target.password.value
+      try {
+        await signIn(email, password)
+        // recarregar para atualizar estado (poderíamos manipular sem reload, mas é simples)
+        location.reload()
+      } catch (err) {
+        console.error(err)
+        showErr('Erro no login: ' + (err.message || err.error_description || JSON.stringify(err)))
+      }
+    })
+
+    // logout
+    btnLogout.addEventListener('click', async (e) => {
+      e.preventDefault()
+      await signOut()
+    })
+
+    // submissão do adminForm (criar local)
+    adminForm.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      msgEl.classList.add('hidden'); errEl.classList.add('hidden')
+
+      const nome = document.getElementById('nome').value.trim()
+      const endereco = document.getElementById('endereco').value.trim()
+      const tipo = document.getElementById('tipo').value.trim()
+      const descricao = document.getElementById('descricao').value.trim()
+      const imgInput = document.getElementById('imagem')
+      const file = imgInput.files && imgInput.files[0] ? imgInput.files[0] : null
+
+      if (!nome || !endereco) {
+        return showErr('Preencha o nome e o endereço.')
+      }
+
+      try {
+        let image_url = null
+        if (file) {
+          showMsg('Enviando imagem...')
+          image_url = await uploadImage(file)
+        }
+
+        // montar payload: aqui colocamos o "tipo" dentro da descrição para não precisar alterar o schema
+        const payload = {
+          name: nome,
+          address: endereco,
+          phone: null,
+          gps_link: null,
+          image_url: image_url,
+          rating: null,
+          description: (tipo ? `Tipo: ${tipo}\n` : '') + descricao
+        }
+
+        showMsg('Criando local...')
+        const created = await createPlace(payload)
+        showMsg('Local criado com sucesso: ' + (created.name || 'OK'))
+        adminForm.reset()
+      } catch (err) {
+        console.error(err)
+        showErr('Erro ao criar local: ' + (err.message || JSON.stringify(err)))
+      }
+    })
   </script>
 </body>
 </html>
