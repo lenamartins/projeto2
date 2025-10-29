@@ -1,65 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acessibilidade em Blumenau</title>
-  <link rel="stylesheet" href="projeto.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AcessaBlu</title>
+  <link rel="stylesheet" href="projeto.css" />
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#cards-list">Locais</a></li>
-        <li><button id="adminAccessBtn" class="admin-button">Acesso Admin</button></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="filter-panel">
-    <div class="filter-option" data-type="fisica">Física</div>
-    <div class="filter-option" data-type="visual">Visual</div>
-    <div class="filter-option" data-type="auditiva">Auditiva</div>
-    <button class="btn-clear-filters">Limpar Filtros</button>
-  </div>
+<br>
+<div class="container">
+  <span class="tagline">💙 Promovendo Inclusão em Blumenau</span>
+  <h1>AcessaBlu</h1>
+  <p class="subtitle">Encontre locais acessíveis em Blumenau para pessoas com deficiência. Uma plataforma colaborativa que promove inclusão e igualdade de acesso.</p>
+  <button class="btn-primary" id="btnExplorar">Explorar Locais Acessíveis</button>
 
-  <main>
-    <section class="main-content">
-      <button id="btnExplorar">Explorar Locais</button>
-      <div class="cards-list" id="cards-list"></div>
-    </section>
-  </main>
-
-  <!-- Modal de detalhes -->
-  <div id="modal-overlay" class="modal-overlay">
-    <div class="modal">
-      <span id="modal-close" class="btn-close">&times;</span>
-      <img id="modal-img" src="" alt="">
-      <h2 id="modal-title"></h2>
-      <p class="modal-rating" id="modal-rating"></p>
-      <div class="modal-tags" id="modal-tags"></div>
-      <p class="modal-info" id="modal-address"></p>
-      <p class="modal-info" id="modal-phone"></p>
-      <p class="modal-description" id="modal-description"></p>
-      <div class="modal-buttons">
-        <a id="modal-gps" href="#" class="btn-link" target="_blank">Abrir no Google Maps</a>
+  <div class="main-content">
+    <aside class="filter-panel">
+      <h3>Filtrar por Acessibilidade</h3>
+      <div class="filter-option" data-type="visual">
+        Deficiência <br> Visual
       </div>
-    </div>
-  </div>
+      <div class="filter-option" data-type="fisica">
+        Deficiência <br>Física
+      </div>
+      <div class="filter-option" data-type="auditiva">
+        Deficiência <br> Auditiva
+      </div>
+      <button class="btn-clear-filters">Limpar Filtros</button>
+    </aside>
 
-  <!-- Modal de login admin -->
-  <div id="loginModal" class="modal-login">
-    <div class="modal-content">
-      <span id="loginClose" class="close-btn">&times;</span>
-      <input id="adminUser" type="text" placeholder="Usuário">
-      <input id="adminPass" type="password" placeholder="Senha">
-      <button id="loginSubmit">Entrar</button>
-      <p id="loginError" style="color: red; display: none;">Usuário ou senha inválidos.</p>
+    <section class="cards-list" id="cards-list">
+    </section>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <img id="modal-img" src="" alt="Imagem do local" />
+    <h2 id="modal-title"></h2>
+    <div class="modal-rating" id="modal-rating"></div>
+    <div class="modal-tags" id="modal-tags"></div>
+    <div class="modal-info" id="modal-address"></div>
+    <div class="modal-info" id="modal-phone"></div>
+    <p class="modal-description" id="modal-description"></p>
+    <div class="modal-buttons">
+      <a href="#" target="_blank" rel="noopener noreferrer" class="btn-link" id="modal-gps">Abrir no Google Maps</a>
+      <button class="btn-close" id="modal-close">Fechar</button>
     </div>
   </div>
+</div>
+
+<div id="loginModal" class="modal modal-login">
+  <div class="modal-content">
+    <span class="close-btn" id="loginClose">&times;</span>
+    <h2>Acesso Restrito</h2>
+    <label for="adminUser">Usuário</label>
+    <input type="text" id="adminUser" placeholder="Digite o usuário" autocomplete="username" />
+
+    <label for="adminPass">Senha</label>
+    <input type="password" id="adminPass" placeholder="Digite a senha" autocomplete="current-password" />
+
+    <button id="loginSubmit">Entrar</button>
+    <p id="loginError" style="color: red; display: none; margin-top: 8px;">Usuário ou senha incorretos!</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; 2025 Locais Acessíveis Blumenau. Todos os direitos reservados.</p>
+    <p>Desenvolvido por Marianne Pera e Lena Raissa R. Martins</p>
+  </div>
+  <button id="adminAccessBtn" class="admin-button">Acesso Restrito</button>
+</footer>
 
 <script src="projeto.js"></script>
 </body>
 </html>
-
-
