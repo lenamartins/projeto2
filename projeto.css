@@ -7,6 +7,13 @@ body {
     color: #222;
 }
 
+/* CONTAINER E LAYOUT */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* HEADER (Novo Topo/Cabeçalho) */
 .page-header {
     background: linear-gradient(135deg, #007bff, #4b42cc); /* Gradiente suave */
@@ -33,12 +40,6 @@ body {
     margin-right: auto;
 }
 
-/* CONTAINER E LAYOUT */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 .main-container {
     padding-top: 20px;
 }
@@ -48,7 +49,10 @@ body {
     margin-bottom: 80px;
     align-items: flex-start; /* Alinha o filtro ao topo */
 }
-/* Estilo desnecessário, mas mantido por precaução */
+
+/* Estilo original de .container e h1 (removidos ou movidos para page-header) */
+/* Removidos para evitar conflito com .page-header */
+/* Estilo original de p.subtitle (movido para .page-header p.subtitle) */
 .tagline {
     display: inline-block;
     background-color: #e7f0ff;
@@ -73,6 +77,7 @@ body {
     margin-bottom: 30px;
 }
 .btn-primary:hover { background-color: #0056b3; }
+
 
 /* PAINEL DE FILTROS (Melhorado) */
 .filter-panel {
@@ -117,6 +122,10 @@ body {
 .filter-option svg {
     fill: currentColor;
     color: #007bff; /* Cor do ícone */
+    flex-shrink: 0; /* Impede o ícone de encolher */
+}
+.filter-option span {
+    display: inline-block; /* Garante que <br> funcione bem no texto */
 }
 .filter-option.active {
     background-color: #007bff; /* Cor principal */
@@ -143,7 +152,7 @@ body {
     background-color: #d32f2f;
 }
 
-/* CARDS LIST (Mantido seu estilo original) */
+/* CARDS LIST (Estilo original mantido) */
 .cards-list {
     flex-grow: 1;
     display: grid;
@@ -327,7 +336,7 @@ body {
     text-align: center;
     border-top: 1px solid #ddd;
     display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-    position: relative; /* Para garantir que o botão não se sobreponha */
+    position: relative; 
     z-index: 1;
 }
 .site-footer p { margin: 5px 0; color: #555; font-size: 14px; }
