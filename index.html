@@ -1,79 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AcessaBlu</title>
-  <link rel="stylesheet" href="projeto.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AcessaBlu</title>
+    <link rel="stylesheet" href="projeto.css" />
 </head>
 <body>
 
-<br>
-<div class="container">
-  <h1>AcessaBlu</h1>
-  <p class="subtitle">Encontre locais acessíveis em Blumenau para pessoas com deficiência. Uma plataforma colaborativa que promove inclusão e igualdade de acesso.</p>
+<header class="page-header">
+    <div class="header-content container">
+        <h1>AcessaBlu</h1>
+        <p class="subtitle">Encontre locais acessíveis em Blumenau para pessoas com deficiência. Uma plataforma colaborativa que promove inclusão e igualdade de acesso.</p>
+    </div>
+</header>
 
-  <div class="main-content">
-    <aside class="filter-panel">
-      <h3>Filtrar por Acessibilidade</h3>
-      <div class="filter-option" data-type="visual">
-        Deficiência <br> Visual
-      </div>
-      <div class="filter-option" data-type="fisica">
-        Deficiência <br>Física
-      </div>
-      <div class="filter-option" data-type="auditiva">
-        Deficiência <br> Auditiva
-      </div>
-      <button class="btn-clear-filters">Limpar Filtros</button>
-    </aside>
+<div class="container main-container">
+    <div class="main-content">
+        <aside class="filter-panel">
+            <h3>Filtrar por Acessibilidade</h3>
+            <div class="filter-option" data-type="visual">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 13c-2.48 0-4.5-2.02-4.5-4.5s2.02-4.5 4.5-4.5 4.5 2.02 4.5 4.5-2.02 4.5-4.5 4.5zm0-7a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z" fill="currentColor"/></svg>
+                Deficiência <br> Visual
+            </div>
+            <div class="filter-option" data-type="fisica">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M18.5 7A2.5 2.5 0 1 0 16 4.5 2.5 2.5 0 0 0 18.5 7zm-5.63 7.82l-2.61-4.01c-.53-.82-1.37-1.31-2.27-1.31h-.3v5.18l-1.35 2.07a1 1 0 0 0 1.66 1.08L10 16.5l.55.84a1 1 0 0 0 1.66-1.08l-2.01-3.08 1.95 3.01a1 1 0 0 0 1.66 1.08l1.3-1.99a1 1 0 0 0-.29-1.28zM15 15.5c-1.11 0-2.01-.89-2.01-2s.9-2 2.01-2 2.01.89 2.01 2-.9 2-2.01 2zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/></svg>
+                Deficiência <br>Física
+            </div>
+            <div class="filter-option" data-type="auditiva">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path d="M14 3.23v2.06c2.89.81 5 3.53 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.75 7-8.77s-2.99-7.86-7-8.77zM16.5 12c0-1.77-.94-3.32-2.35-4.14v8.28c1.4-.82 2.35-2.37 2.35-4.14zm-14-2v4h3l5 5V5l-5 5H2z" fill="currentColor"/></svg>
+                Deficiência <br> Auditiva
+            </div>
+            <button class="btn-clear-filters">Limpar Filtros</button>
+        </aside>
 
-    <section class="cards-list" id="cards-list">
-    </section>
-  </div>
+        <section class="cards-list" id="cards-list">
+        </section>
+    </div>
 </div>
 
 <div class="modal-overlay" id="modal-overlay">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <img id="modal-img" src="" alt="Imagem do local" />
-    <h2 id="modal-title"></h2>
-    <div class="modal-rating" id="modal-rating"></div>
-    <div class="modal-tags" id="modal-tags"></div>
-    <div class="modal-info" id="modal-address"></div>
-    <div class="modal-info" id="modal-phone"></div>
-    <p class="modal-description" id="modal-description"></p>
-    <div class="modal-buttons">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="btn-link" id="modal-gps">Abrir no Google Maps</a>
-      <button class="btn-close" id="modal-close">Fechar</button>
-    </div>
-  </div>
 </div>
 
 <div id="loginModal" class="modal modal-login">
-  <div class="modal-content">
-    <span class="close-btn" id="loginClose">&times;</span>
-    <h2>Acesso Restrito</h2>
-    <label for="adminUser">Usuário</label>
-    <input type="text" id="adminUser" placeholder="Digite o usuário" autocomplete="username" />
-
-    <label for="adminPass">Senha</label>
-    <input type="password" id="adminPass" placeholder="Digite a senha" autocomplete="current-password" />
-
-    <button id="loginSubmit">Entrar</button>
-    <p id="loginError" style="color: red; display: none; margin-top: 8px;">Usuário ou senha incorretos!</p>
-  </div>
 </div>
 
 <footer class="site-footer">
-  <div class="footer-content">
-    <p>&copy; 2025 Locais Acessíveis Blumenau. Todos os direitos reservados.</p>
-    <p>Desenvolvido por Marianne Pera e Lena Raissa R. Martins</p>
-  </div>
-  <button id="adminAccessBtn" class="admin-button">Acesso Restrito</button>
+<div class="footer-content">
+        <p>© 2025 Locais Acessíveis Blumenau. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Marianne Pera e Lena Raissa R. Martins</p>
+    </div>
+    <button id="adminAccessBtn" class="admin-button">Acesso Restrito</button>
 </footer>
 
 <script src="projeto.js"></script>
 </body>
 </html>
-
-
