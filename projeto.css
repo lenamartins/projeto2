@@ -2,7 +2,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: #e6eaff;
+  background: #f0f1f2;
   color: #222;
 }
 .container {
@@ -89,7 +89,7 @@ p.subtitle {
 .filter-option:hover { background-color: #d4d5d6; }
 .filter-option.active {
   background-color: #cae1fa;
-  color: white;
+  color: #222;
   border: 1px solid #4b42cc;
 }
 
@@ -269,6 +269,7 @@ p.subtitle {
   background-color: #7d7df5; color: white; border: none; border-radius: 8px; padding: 8px; cursor: pointer; font-size: 16px;
 }
 #loginSubmit:hover { background-color: #5b5be0; }
+
 
 
 
