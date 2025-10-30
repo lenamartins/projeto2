@@ -2,7 +2,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: #f0f1f2;
+  background: #fff;
   color: #222;
 }
 .container {
@@ -86,10 +86,10 @@ p.subtitle {
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
   transition: background-color 0.25s ease;
 }
-.filter-option:hover { background-color: #fff; }
+.filter-option:hover { background-color: #e7f0ff; }
 .filter-option.active {
-  background-color: #fff;
-  color: #222;
+  background-color: #2a8efa;
+  color: white;
   border: 1px solid #4b42cc;
 }
 
@@ -269,13 +269,4 @@ p.subtitle {
   background-color: #7d7df5; color: white; border: none; border-radius: 8px; padding: 8px; cursor: pointer; font-size: 16px;
 }
 #loginSubmit:hover { background-color: #5b5be0; }
-
-
-
-
-
-
-
-
-
 
