@@ -63,7 +63,7 @@ p.subtitle {
 
 .filter-panel {
   width: 280px;
-  background: #a3b1f7;
+  background: #e1e2e6;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgb(0 0 0 / 0.05);
   padding: 20px;
@@ -269,6 +269,7 @@ p.subtitle {
   background-color: #7d7df5; color: white; border: none; border-radius: 8px; padding: 8px; cursor: pointer; font-size: 16px;
 }
 #loginSubmit:hover { background-color: #5b5be0; }
+
 
 
 
