@@ -86,7 +86,7 @@ p.subtitle {
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.05);
   transition: background-color 0.25s ease;
 }
-.filter-option:hover { background-color: #e7f0ff; }
+.filter-option:hover { background-color: #88b0f2; }
 .filter-option.active {
   background-color: #2a8efa;
   color: white;
@@ -269,4 +269,5 @@ p.subtitle {
   background-color: #7d7df5; color: white; border: none; border-radius: 8px; padding: 8px; cursor: pointer; font-size: 16px;
 }
 #loginSubmit:hover { background-color: #5b5be0; }
+
 
