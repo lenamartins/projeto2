@@ -14,30 +14,98 @@ body {
     padding: 0 20px;
 }
 
-/* HEADER (Novo Topo/Cabeçalho) */
-.page-header {
-    background: linear-gradient(135deg, #007bff, #4b42cc); /* Gradiente suave */
+/* --- ESTILOS DO NOVO CABEÇALHO --- */
+.acessablu-header {
+    /* Usando a cor #1a75ff do seu primeiro print, mas você pode usar o gradiente que tinha antes se preferir! */
+    background-color: #1a75ff; 
+    padding-top: 25px;
+    padding-bottom: 25px;
     color: white;
-    padding: 40px 0; /* Mais padding para destaque */
+    /* Mantendo a margem e sombra para que o layout da página não mude muito */
     margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
-.header-content {
+
+/* Wrapper Flexbox para alinhar logo e navegação */
+.header-content-wrapper {
+    display: flex;
+    justify-content: space-between; /* Coloca os elementos nas pontas */
+    align-items: center; /* Centraliza verticalmente */
+    /* Garante que o conteúdo fique centralizado e respeite o max-width */
+    max-width: 1100px; /* Usando o mesmo max-width do seu .container */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo para o Título/Logo */
+.acessablu-logo {
+    font-size: 2.5rem; /* Um pouco menor que o 3rem original, para caber com a navegação */
+    font-weight: 900; /* Mantendo o peso de fonte alto */
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo para a Navegação (Links) */
+.header-nav ul {
+    list-style: none;
+    display: flex; /* Coloca os botões lado a lado */
+    padding: 0;
+    margin: 0;
+}
+
+.header-nav li {
+    margin-left: 10px; /* Espaçamento entre os botões */
+}
+
+/* Estilo dos "Quadradinhos" (Botões de Navegação) */
+.nav-button {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15); /* Fundo sutil */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda discreta */
+    padding: 8px 15px;
+    border-radius: 8px; /* Mantendo um raio consistente com outros botões */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600; /* Mantendo um peso de fonte forte */
+    transition: background-color 0.3s, border-color 0.3s;
+    /* Linhas abaixo garantem que o link seja tratado como bloco para o padding funcionar */
+    display: inline-block; 
+    line-height: normal;
+}
+
+/* Efeito ao passar o mouse */
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: white;
+}
+
+/* Estilo para a Descrição Centralizada */
+.acessablu-description {
     text-align: center;
-}
-.page-header h1 {
-    font-weight: 900;
-    color: white; /* Cor branca para contraste */
-    margin: 0 0 10px;
-    font-size: 3rem;
-}
-.page-header p.subtitle {
+    font-size: 1.1rem; /* Um pouco menor que o 1.2rem original */
+    margin-top: 15px;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 0;
-    font-size: 1.2rem;
-    max-width: 700px;
+    max-width: 700px; 
     margin-left: auto;
     margin-right: auto;
+    padding: 0 20px;
+}
+
+/* --- RESPONSIVIDADE ADICIONAL PARA O NOVO CABEÇALHO --- */
+@media (max-width: 768px) {
+    .header-content-wrapper {
+        /* Em telas menores, alinha o logo e os links verticalmente */
+        flex-direction: column;
+        gap: 15px;
+    }
+    .header-nav ul {
+        /* Centraliza os botões em telas menores */
+        justify-content: center;
+        flex-wrap: wrap; /* Permite que os botões quebrem a linha se necessário */
+    }
+    .acessablu-logo {
+        font-size: 2rem;
+    }
 }
 
 .main-container {
@@ -399,3 +467,4 @@ body {
         margin-top: 10px;
     }
 }
+
