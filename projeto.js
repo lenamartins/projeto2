@@ -258,3 +258,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCards(locais);
 });
+
+/**
+ * Lógica para o Formulário de Sugestões/Comentários (Final da Página)
+ * Apenas simula o envio e mostra a mensagem de agradecimento (não salva os dados)
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Seleciona os elementos do DOM
+    const form = document.getElementById('site-comment-form');
+    const thankYouMessage = document.getElementById('thank-you-message');
+    
+    // Verifica se o formulário existe na página antes de adicionar o listener
+    if (form) {
+        // 2. Adiciona o listener para o evento de 'submit' (envio)
+        form.addEventListener('submit', function(event) {
+            
+            // 3. IMPEDE O COMPORTAMENTO PADRÃO do formulário (recarregar a página)
+            event.preventDefault();
+            
+            // 4. Aqui você faria a lógica de envio para um servidor real (backend)
+            // Exemplo de como você obter os valores:
+            const name = document.getElementById('sugestion-name').value;
+            const email = document.getElementById('sugestion-email').value;
+            const message = document.getElementById('sugestion-text').value;
+
+            // Log para console (apenas para debug)
+            console.log("Sugestão Enviada:");
+            console.log("Nome:", name);
+            console.log("Email:", email);
+            console.log("Mensagem:", message);
+            
+            // --- SIMULAÇÃO DE SUCESSO ---
+            
+            // 5. Esconde o formulário
+            form.style.display = 'none';
+            
+            // 6. Mostra a mensagem de agradecimento
+            thankYouMessage.style.display = 'flex'; // Usamos 'flex' para corresponder ao CSS
+
+            // Opcional: Limpa os campos após a "submissão"
+            form.reset(); 
+            
+            // 7. Opcional: Reverte o processo após alguns segundos para permitir um novo envio
+            setTimeout(() => {
+                thankYouMessage.style.display = 'none';
+                form.style.display = 'block'; // Ou 'flex', dependendo do layout original do form
+            }, 8000); // Reverte após 8 segundos
+        });
+    }
+    
+    // ----------------------------------------------------------------------
+    // OBS: O código para Acesso Restrito (Login Modal) ficaria aqui também,
+    // usando o mesmo padrão de document.getElementById e eventListeners.
+    // ----------------------------------------------------------------------
+});
