@@ -468,3 +468,315 @@ body {
     }
 }
 
+/* ---------------------------------- */
+/* 1. RESET E VARIÁVEIS CSS (Melhores Práticas) */
+/* ---------------------------------- */
+:root {
+    /* Cores */
+    --primary-color: #007bff; /* Azul forte, bom para links e botões */
+    --secondary-color: #6c757d; /* Cinza suave */
+    --text-color: #333; /* Texto escuro para alto contraste */
+    --background-light: #f8f9fa; /* Fundo muito claro */
+    --background-white: #ffffff; /* Fundo branco */
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    
+    /* Tipografia */
+    --font-sans: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6; /* Aumenta a legibilidade */
+    color: var(--text-color);
+    background-color: var(--background-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Garante que o conteúdo ocupe o espaço disponível */
+.main-container {
+    flex-grow: 1; 
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; /* Cor mais escura no hover */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------------------------------- */
+/* 2. CABEÇALHO (HEADER) */
+/* ---------------------------------- */
+.acessablu-header {
+    background-color: var(--background-white);
+    box-shadow: var(--shadow-light);
+    padding: 15px 0;
+}
+
+.header-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.acessablu-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.header-nav ul li {
+    margin-left: 20px;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+}
+
+
+/* ---------------------------------- */
+/* 3. SEÇÃO HERO (Destaque) */
+/* ---------------------------------- */
+.hero-about {
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    padding: 80px 0;
+    text-align: center;
+    background-image: linear-gradient(135deg, rgba(0, 123, 255, 0.9), rgba(0, 86, 179, 0.9));
+}
+
+.hero-about-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-about-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* ---------------------------------- */
+/* 4. CONTEÚDO PRINCIPAL (MAIN) */
+/* ---------------------------------- */
+.main-container {
+    padding: 40px 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* ---------------------------------- */
+/* 4.1. Seção Missão */
+/* ---------------------------------- */
+.mission-section {
+    background-color: var(--background-white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 40px;
+}
+
+.mission-text {
+    font-size: 1.1rem;
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------- */
+/* 4.2. Seção Valores */
+/* ---------------------------------- */
+.values-section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    /* Para telas menores */
+    flex-direction: column; 
+}
+
+/* A partir de telas maiores que 768px, usa-se a linha */
+@media (min-width: 768px) {
+    .values-section {
+        flex-direction: row; 
+    }
+}
+
+.value-card {
+    background-color: var(--background-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    flex: 1; /* Distribui o espaço igualmente */
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px); /* Efeito sutil de elevação */
+}
+
+.value-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------- */
+/* 4.3. Seção Equipe */
+/* ---------------------------------- */
+.team-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.team-members {
+    display: grid;
+    /* Duas colunas em telas maiores, uma em telas menores */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.member-card {
+    background-color: var(--background-white);
+    padding: 25px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 5px;
+    box-shadow: var(--shadow-light);
+    text-align: left;
+}
+
+.member-card h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.member-card p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* ---------------------------------- */
+/* 5. RODAPÉ (FOOTER) */
+/* ---------------------------------- */
+.site-footer {
+    background-color: var(--text-color);
+    color: var(--background-light);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Empurra o footer para baixo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.site-footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.admin-button {
+    background-color: var(--secondary-color);
+    color: var(--background-white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.admin-button:hover {
+    background-color: #5a6268;
+}
+
+/* ---------------------------------- */
+/* 6. RESPONSIVIDADE (Ajustes finos para Mobile) */
+/* ---------------------------------- */
+@media (max-width: 600px) {
+    .hero-about-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-about {
+        padding: 50px 0;
+    }
+
+    .header-content-wrapper {
+        flex-direction: column;
+    }
+
+    .header-nav {
+        margin-top: 10px;
+    }
+
+    .header-nav ul li {
+        margin-left: 0;
+        margin: 0 10px;
+    }
+
+    .mission-section {
+        padding: 30px 15px;
+    }
+
+    .site-footer {
+        padding: 15px;
+    }
+}
+
