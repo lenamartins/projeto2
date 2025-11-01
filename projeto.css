@@ -780,3 +780,107 @@ a:hover {
     }
 }
 
+/* ---------------------------------- */
+/* Estilos da Seção de Sugestões/Comentários no Fim da Página */
+/* ---------------------------------- */
+
+.site-comments {
+    padding: 60px 20px;
+    background-color: var(--background-white);
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+.site-comments .section-title {
+    border-bottom: none; /* Remove a linha para um visual mais limpo aqui */
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+/* Estilo do Formulário */
+.site-comment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.site-comment-form input[type="text"],
+.site-comment-form input[type="email"],
+.site-comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.site-comment-form input:focus,
+.site-comment-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.site-comment-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit-suggestion {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-submit-suggestion:hover {
+    background-color: #0056b3;
+}
+
+/* Mensagem de Agradecimento */
+.thank-you-message {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #28a745;
+    background-color: #d4edda;
+    color: #155724;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+}
+
+.thank-you-message i {
+    font-size: 1.5rem;
+}
+
+
