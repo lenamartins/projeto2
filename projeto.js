@@ -259,56 +259,62 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCards(locais);
 });
 
-/**
- * Lógica para o Formulário de Sugestões/Comentários (Final da Página)
- * Apenas simula o envio e mostra a mensagem de agradecimento (não salva os dados)
- */
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Seleciona os elementos do DOM
-    const form = document.getElementById('site-comment-form');
-    const thankYouMessage = document.getElementById('thank-you-message');
-    
-    // Verifica se o formulário existe na página antes de adicionar o listener
-    if (form) {
-        // 2. Adiciona o listener para o evento de 'submit' (envio)
-        form.addEventListener('submit', function(event) {
-            
-            // 3. IMPEDE O COMPORTAMENTO PADRÃO do formulário (recarregar a página)
-            event.preventDefault();
-            
-            // 4. Aqui você faria a lógica de envio para um servidor real (backend)
-            // Exemplo de como você obter os valores:
-            const name = document.getElementById('sugestion-name').value;
-            const email = document.getElementById('sugestion-email').value;
-            const message = document.getElementById('sugestion-text').value;
+    const form = document.getElementById('suggestionForm'); // Assumindo que você dará este ID ao seu <form>
+    const formContainer = document.getElementById('commentFormContainer'); // Assumindo que você irá envolver o form em uma div/section com este ID
+    const thankYouMessage = document.getElementById('thankYouMessage'); // Assumindo que você dará este ID à sua mensagem de sucesso
+    const btnSubmit = document.getElementById('btnSubmitSuggestion'); // O botão de submit
 
-            // Log para console (apenas para debug)
-            console.log("Sugestão Enviada:");
-            console.log("Nome:", name);
-            console.log("Email:", email);
-            console.log("Mensagem:", message);
-            
-            // --- SIMULAÇÃO DE SUCESSO ---
-            
-            // 5. Esconde o formulário
-            form.style.display = 'none';
-            
-            // 6. Mostra a mensagem de agradecimento
-            thankYouMessage.style.display = 'flex'; // Usamos 'flex' para corresponder ao CSS
+    // Função para adicionar a animação de "check" temporariamente no botão
+    const animateSuccessButton = (button) => {
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅ Enviado!';
+        button.style.backgroundColor = '#28a745'; // Cor verde de sucesso
 
-            // Opcional: Limpa os campos após a "submissão"
-            form.reset(); 
-            
-            // 7. Opcional: Reverte o processo após alguns segundos para permitir um novo envio
-            setTimeout(() => {
-                thankYouMessage.style.display = 'none';
-                form.style.display = 'block'; // Ou 'flex', dependendo do layout original do form
-            }, 8000); // Reverte após 8 segundos
-        });
-    }
-    
-    // ----------------------------------------------------------------------
-    // OBS: O código para Acesso Restrito (Login Modal) ficaria aqui também,
-    // usando o mesmo padrão de document.getElementById e eventListeners.
-    // ----------------------------------------------------------------------
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.backgroundColor = 'var(--primary-color)'; // Volta à cor original
+        }, 2000); // 2 segundos para o feedback
+    };
+
+    // 2. Adiciona o listener de submissão ao formulário
+    form.addEventListener('submit', function(event) {
+        // Evita o comportamento padrão de recarregar a página
+        event.preventDefault();
+
+        // Obtém os campos (substitua pelos IDs reais do seu HTML se forem diferentes)
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const suggestionInput = document.getElementById('suggestion');
+
+        // 3. Validação simples: verifica se os campos estão vazios
+        if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || suggestionInput.value.trim() === '') {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return; // Interrompe o envio se a validação falhar
+        }
+
+        // 4. Se a validação passar, simula o envio:
+        // **********************************************
+        // NOTA: Em um site real, aqui você faria uma requisição AJAX
+        // (ex: usando fetch) para enviar os dados para um servidor (backend).
+        // **********************************************
+
+        // 4a. Anima o botão para feedback
+        animateSuccessButton(btnSubmit);
+
+        // 4b. Limpa os campos do formulário
+        form.reset();
+
+        // 4c. Oculta o formulário e mostra a mensagem de sucesso após um breve atraso
+        setTimeout(() => {
+            // Garante que o container do formulário e a mensagem existem
+            if (formContainer && thankYouMessage) {
+                // Esconde o container do formulário
+                formContainer.style.display = 'none'; 
+                // Exibe a mensagem de sucesso (o display: flex do CSS já faz o trabalho)
+                thankYouMessage.style.display = 'flex'; 
+            }
+        }, 300); // Pequeno atraso para a animação do botão ser notada
+    });
 });
