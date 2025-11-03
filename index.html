@@ -79,29 +79,32 @@
     </div>
 </div>
 
-    <section class="site-comments container">
-    <h2 class="section-title">Deixe sua Sugestão ou Comentário sobre o AcessaBlu</h2>
-    <p class="section-subtitle">Sua opinião é fundamental para melhorarmos a plataforma e a acessibilidade em Blumenau.</p>
-    
-    <form id="site-comment-form" class="site-comment-form">
-        <div class="form-group">
-            <label for="sugestion-name">Seu Nome (opcional):</label>
-            <input type="text" id="sugestion-name" placeholder="Nome ou Apelido" aria-label="Seu Nome" />
+  <section class="site-comments">
+    <div class="container">
+        <div id="commentFormContainer" class="site-comment-form">
+            <form id="suggestionForm">
+                <div class="form-group">
+                    <label for="name">Seu Nome</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Seu Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="suggestion">Sua Sugestão/Comentário</label>
+                    <textarea id="suggestion" required></textarea>
+                </div>
+                <button type="submit" id="btnSubmitSuggestion" class="btn-submit-suggestion">
+                    Enviar Sugestão
+                </button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="sugestion-email">Seu Email (opcional, para resposta):</label>
-            <input type="email" id="sugestion-email" placeholder="seuemail@exemplo.com" aria-label="Seu Email" />
+
+        <div id="thankYouMessage" class="thank-you-message">
+            <i class="fas fa-check-circle"></i> 
+            <span>Obrigado! Seu comentário foi enviado com sucesso.</span>
         </div>
-        <div class="form-group">
-            <label for="sugestion-text">Sua Mensagem / Sugestão *</label>
-            <textarea id="sugestion-text" placeholder="Sugira um local, relate um erro ou comente sobre o site..." required aria-label="Sua Mensagem / Sugestão"></textarea>
-        </div>
-        <button type="submit" class="btn-submit-suggestion">Enviar Sugestão</button>
-    </form>
-    
-    <div id="thank-you-message" class="thank-you-message" style="display:none;">
-        <i class="fas fa-check-circle"></i>
-        <p>Obrigado! Sua mensagem foi enviada com sucesso e é muito importante para nós.</p>
     </div>
 </section>
 
@@ -118,6 +121,7 @@
 <script src="projeto.js"></script>
 </body>
 </html>
+
 
 
 
