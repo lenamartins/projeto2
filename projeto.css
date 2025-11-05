@@ -57,29 +57,26 @@ body {
     margin-left: 10px; /* Espaçamento entre os botões */
 }
 
-/* Estilo dos "Quadradinhos" (Botões de Navegação) */
+/* Localize e substitua estes estilos na seção: 2. CABEÇALHO (HEADER) */
+
 .nav-button {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.15); /* Fundo sutil */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda discreta */
+    display: inline-block;
     padding: 8px 15px;
-    border-radius: 8px; /* Mantendo um raio consistente com outros botões */
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600; /* Mantendo um peso de fonte forte */
-    transition: background-color 0.3s, border-color 0.3s;
-    /* Linhas abaixo garantem que o link seja tratado como bloco para o padding funcionar */
-    display: inline-block; 
-    line-height: normal;
+    /* COMEÇA AZUL E TEXTO BRANCO */
+    background-color: var(--primary-color); 
+    color: var(--background-white);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-/* Efeito ao passar o mouse */
 .nav-button:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-    border-color: white;
+    /* PASSA PARA BRANCO/CLARO E TEXTO AZUL */
+    background-color: var(--background-light); /* Cinza claro suave, como você sugeriu (ou use var(--background-white) para branco puro) */
+    color: var(--primary-color); /* Texto azul no hover */
+    border-color: var(--primary-color); /* Mantém a borda azul */
 }
-
-/* Estilo para a Descrição Centralizada */
 .acessablu-description {
     text-align: center;
     font-size: 1.1rem; /* Um pouco menor que o 1.2rem original */
@@ -835,3 +832,4 @@ a:hover {
     /* ... (outros estilos) ... */
     display: block; /* Garante que está visível por padrão */
 }
+
