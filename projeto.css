@@ -710,9 +710,9 @@ a:hover {
 /* ---------------------------------- */
 .site-footer {
     background-color: var(--text-color);
-    color: var(--background-light);
+    color: 0979b0);
     padding: 20px 0;
-    text-align: center;
+    text-align: left;
     margin-top: auto; /* Empurra o footer para baixo */
     display: flex;
     flex-direction: column;
@@ -832,4 +832,5 @@ a:hover {
     /* ... (outros estilos) ... */
     display: block; /* Garante que está visível por padrão */
 }
+
 
