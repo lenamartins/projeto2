@@ -777,60 +777,78 @@ a:hover {
     }
 }
 
-/* ---------------------------------- */
-/* Estilos da Seção de Sugestões/Comentários no Fim da Página */
-/* ---------------------------------- */
+/* --- ESTILOS PARA COMENTÁRIOS SALVOS --- */
 
-.site-comments {
-    padding: 60px 20px;
-    background-color: var(--background-white);
-    margin-bottom: 40px;
-    border-radius: 8px;
-    box-shadow: var(--shadow-light);
-    text-align: center;
+.comments-list-container {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
 }
 
-.site-comments .section-title {
-    border-bottom: none; /* Remove a linha para um visual mais limpo aqui */
-    margin-bottom: 10px;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: var(--secondary-color);
-    margin-bottom: 30px;
-}
-
-/* Estilo do Formulário */
-.site-comment-form {
-    max-width: 600px;
-    margin: 0 auto;
+.comment-card {
+    background: #f7f9fc; /* Fundo suave para o comentário */
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     text-align: left;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+.comment-header strong {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.comment-date {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+}
+
+.comment-content {
+    font-size: 1rem;
     color: var(--text-color);
-}
-/* MODIFICAÇÃO NECESSÁRIA NO CSS */
-.modal-overlay.active { 
-    display: flex; /* Mantido, apenas um lembrete */
-} 
-/* Oculta a mensagem de sucesso por padrão */
-.thank-you-message {
-    /* ... (outros estilos) ... */
-    display: none; /* ESSENCIAL: Começa escondido */
-}
-/* Altera o seletor para que o JS possa esconder facilmente */
-.site-comment-form {
-    /* ... (outros estilos) ... */
-    display: block; /* Garante que está visível por padrão */
+    margin-bottom: 15px;
+    white-space: pre-wrap; /* Mantém quebras de linha do textarea */
 }
 
+/* Estilo para a área de edição (que aparecerá no lugar do conteúdo) */
+.comment-card textarea.edit-comment-area {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
+/* Botões de Ação (Editar/Apagar/Salvar/Cancelar) */
+.comment-actions button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    margin-right: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.comment-actions button:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.comment-actions button.delete-btn {
+    color: #dc3545; /* Vermelho para apagar */
+}
+
+.comment-actions button.delete-btn:hover {
+    color: #bd2130;
+}
