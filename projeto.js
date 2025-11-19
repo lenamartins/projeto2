@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             descricao: "Entrada gratuita, acessível ao público geral, visita guiada, mirante panorâmico, facilidades para PNE e estacionamento.",
             gps: "https://maps.app.goo.gl/uzD3odxDzRQLJ6738",
             img: "https://www.blogmeudestino.com/wp-content/uploads/2017/08/museu-da-agua-em-blumenau-sc-9-800x600.jpg",
-            tags: ["fisica", "cadeirantes", "rampa"],
+            tags: ["fisica", "cadeirantes"],
             rating: 4.7
         },
         {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             descricao: "Entrada com rampa, espaço interno amplo e plano, localizado em uma área central com infraestrutura adaptada, como calçadas rebaixadas e banheiros acessíveis próximos.",
             gps: "https://maps.app.goo.gl/K7j6VPgu2KnSpV1x5",
             img: "https://www.litoraldesantacatarina.com/wp-content/uploads/2010/10/foto-museu-da-cerveja.jpg",
-            tags: ["fisica", "cadeirantes", "rampa"],
+            tags: ["fisica", "cadeirantes"],
             rating: 4.4
         },
         {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             descricao: "Conta com placas acessíveis em pontos-chave, incluindo braille, pictogramas CAA, QR Codes com audiodescrição, alto-relevo e contraste visual.",
             gps: "https://share.google/pWi5Oj9P5Y6QBzc36",
             img: "https://www.turismoblumenau.com.br/wp-content/uploads/2021/10/Prefeitura-de-Blumenau-Credito_Clio-Luconi-1024x683.png",
-            tags: ["visual", "auditiva", "comunicacao"],
+            tags: ["visual", "auditiva"],
             rating: 4.4
         },
         {
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             descricao: "O Teatro Carlos Gomes passou por revitalização, ganhando rampas elevatórias, espaços e poltronas especiais, banheiros adaptados, assentos e circulação mais amplos, além de melhorias no forro, climatização e acústica, tudo preservando sua estética original.",
             gps: "https://maps.app.goo.gl/SXcHBMSzV8w5uHby5",
             img: "https://thumbs.dreamstime.com/b/teatro-de-carlos-gomes-blumenau-santa-catarina-75832294.jpg",
-            tags: ["cadeirante", "mobilidade", "auditiva"],
+            tags: ["cadeirante", "auditiva"],
             rating: 4.7
         },
         {
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
             descricao: "A Estação Unifique oferece um ambiente acessível, com áreas amplas e niveladas que facilitam o deslocamento de cadeirantes e pessoas com mobilidade reduzida.",
             gps: "https://www.google.com/maps/place/ESTAÇÃO+UNIFIQUE",
             img: "https://i.ytimg.com/vi/5usnzA11PYE/maxresdefault.jpg",
-            tags: ["cadeirante", "mobilidade"],
+            tags: ["cadeirante"],
             rating: 4.5
         }
     ];
@@ -446,3 +446,4 @@ document.addEventListener("DOMContentLoaded", () => {
     loadComments();
 
 });
+
