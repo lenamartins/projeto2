@@ -57,19 +57,20 @@ body {
 .nav-button {
     display: inline-block;
     padding: 8px 15px;
-    background-color: #f7f9fc; 
-    color: #f7f9fc;
-    border: 2px solid #007bff;
+    background-color: white;      /* Botão branco */
+    color: #007bff;               /* Texto azul */
+    border: 2px solid #ffffff00;  /* Sem borda visível */
     border-radius: 5px;
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .nav-button:hover {
-    background-color: #007bff; 
-    color: #007bff; 
-    border-color: #007bff; 
+    background-color: #007bff;  /* Fica azul ao passar o mouse */
+    color: white;               /* Texto fica branco */
+    border-color: #007bff;      /* Borda azul durante hover */
 }
+
 .acessablu-description {
     text-align: center;
     font-size: 1.1rem; 
@@ -607,4 +608,5 @@ body {
 .comment-actions .delete-btn:hover {
     background-color: #c82333;
 }
+
 
